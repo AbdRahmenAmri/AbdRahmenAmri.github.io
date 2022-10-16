@@ -1,0 +1,149 @@
+
+:host button{
+    position: relative;
+    left: 15vw;
+    padding: 15px 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 3px;
+    transition: .5s;
+    justify-content: right;
+    opacity: 0;
+}
+
+:host.show button{
+    opacity: 1;
+}
+
+:host.show.bye button{
+    opacity: 1;
+    animation: byeB .5s 2s 1 linear forwards;
+}
+
+@keyframes byeB {
+    0%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+}
+
+:host button:hover{
+    scale: .95;
+}
+
+:host .line{
+    position: absolute;
+    background-color: whitesmoke;
+}
+
+:host.show  .line.bottom{
+    width: 100%;
+    height: .3vh;
+    bottom: 0;
+    left: 0;
+    animation: lineBottom 1s 1 linear forwards;
+}
+
+
+
+@keyframes lineBottom{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 100%;
+    }
+}
+
+
+:host.show .line.right{
+    width: .15vw;
+    height: 0;
+    bottom: 0;
+    right: 0;
+    animation: lineRight .3s 1s 1 linear forwards;
+
+}
+
+@keyframes lineRight{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 100%;
+    }
+}
+
+
+:host.show .line.top{
+    width: 0;
+    height: .3vh;
+    top: 0;
+    right: 0;
+    animation: lineTop .9s 1.3s 1 linear forwards;
+
+}
+
+@keyframes lineTop{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 85%;
+    }
+}
+
+:host.show .line.left{
+    width: .15vw;
+    height: 0;
+    top: 0;
+    left: 15%;
+    animation: lineLeft .2s 2.2s 1 linear forwards;
+}
+
+@keyframes lineLeft{
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 60%;
+    }
+}
+
+
+:host.show .line.left::before{
+    position: absolute;
+    content: '';
+    bottom: -.1vh;
+    right: -.3vw;
+    width: .15vw;
+    height: 0;
+    background-color: whitesmoke;
+    transform: rotateZ(45deg);
+    animation: arrows .2s 2.4s 1 linear forwards;
+}
+
+:host.show .line.left::after{
+    position: absolute;
+    content: '';
+    bottom: -.1vh;
+    left: -.3vw;
+    width: .15vw;
+    height: 0;
+    background-color: whitesmoke;
+    transform: rotateZ(-45deg);
+    animation: arrows .2s 2.4s 1 linear forwards;
+}
+@keyframes arrows {
+    0%{
+        height: 0;
+    }
+    100%{
+        height: 1.5vh;
+    }
+}
