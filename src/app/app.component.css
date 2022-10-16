@@ -1,0 +1,79 @@
+:host{
+    --bg : rgb(48, 2, 232);
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    background: linear-gradient(to bottom, transparent ,var(--bg));
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-areas: "logo" "main" "arrows";
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh auto auto;
+    z-index: 100;
+    justify-self: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+:host h1{
+    grid-area: logo;
+    font-size: 1em;
+    letter-spacing: 2px;
+    padding: 25px 40px;
+    text-transform: capitalize;
+    border-left: 2px solid var(--orangePink);
+}
+
+:host .container{
+    grid-area: main;
+    position: relative;
+    width: 70vw;
+    height: 70vh;
+    justify-content: center;
+    justify-self: center;
+}
+:host .arrows{
+    grid-area: arrows;
+    justify-self: end;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 5vw;
+    gap: 10px;
+}
+
+
+:host .arrows span{
+    position: relative;
+    cursor: pointer;
+    font-weight: 200;
+    display: grid;
+    place-content: center;
+    padding: 5px 12px;
+    background-color: var(--lightTextColor);
+    border-radius: 4px;
+    color: var(--bgColor);
+}
+/* Tablet Styles */
+@media only screen and (max-width: 1100px){
+    
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+    :host {
+        width: 90%;
+    }
+    :host h1{
+        font-size: 1.2em;
+    }
+:host .arrows{
+    justify-self: center;
+}
+  }
+  
+
