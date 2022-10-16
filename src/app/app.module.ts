@@ -9,6 +9,7 @@ import { DownloadBtnComponent } from './component/download-btn/download-btn.comp
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const routes:Routes = [
   {path: '',component:IndexComponent},
@@ -28,7 +29,8 @@ const routes:Routes = [
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
