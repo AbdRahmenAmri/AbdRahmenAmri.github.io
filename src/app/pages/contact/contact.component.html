@@ -1,1 +1,9 @@
-<p>contact works!</p>
+<header>
+  <h1>Let's Make <span>Somthing Great</span> Together.</h1>
+</header>
+<main class="wrapper">
+    <a href={{el.link}} target="_blank" class="box" *ngFor="let el of icons;let i = index;" style=--m:{{i+1}}>
+        <fa-icon style=--j:{{i+1}} [icon]=(el.icon)></fa-icon>
+    <span style=--k:{{i+1}}>{{el.text}}</span>
+    </a>
+</main>
