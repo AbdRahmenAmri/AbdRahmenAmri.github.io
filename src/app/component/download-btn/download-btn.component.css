@@ -62,7 +62,7 @@
 
 
 :host.show .line.right{
-    width: .15vw;
+    width: .3vh;
     height: 0;
     bottom: 0;
     right: 0;
@@ -99,7 +99,7 @@
 }
 
 :host.show .line.left{
-    width: .15vw;
+    width: .3vh;
     height: 0;
     top: 0;
     left: 15%;
@@ -119,9 +119,9 @@
 :host.show .line.left::before{
     position: absolute;
     content: '';
-    bottom: -.1vh;
-    right: -.3vw;
-    width: .15vw;
+    bottom: -10%;
+    right: -150%;
+    width: .3vh;
     height: 0;
     background-color: whitesmoke;
     transform: rotateZ(45deg);
@@ -131,9 +131,9 @@
 :host.show .line.left::after{
     position: absolute;
     content: '';
-    bottom: -.1vh;
-    left: -.3vw;
-    width: .15vw;
+    bottom: -10%;
+    left: -150%;
+    width: .3vh;
     height: 0;
     background-color: whitesmoke;
     transform: rotateZ(-45deg);
@@ -144,6 +144,6 @@
         height: 0;
     }
     100%{
-        height: 1.5vh;
+        height: 2vh;
     }
 }
