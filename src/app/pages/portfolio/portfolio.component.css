@@ -34,8 +34,13 @@
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: capitalize;
+  opacity: 0;
+  transition: .5s;
+  transition-delay: 1.3s;
 }
-
+:host.show .details .title h1 {
+  opacity: 1;
+}
 :host .details .title img {
   position: absolute;
   width: 100%;
@@ -45,6 +50,14 @@
   border-radius: 10px;
   border: 3px solid #fff;
   border-bottom: none;
+  opacity: 0;
+  transition: .5s;
+  transition-delay: 1s;
+  transform: translateY(-5vh);
+}
+:host.show .details .title img {
+  transform: translateY(0);
+  opacity: 1;
 }
 :host .details .content {
   position: relative;
@@ -59,11 +72,22 @@
 }
 
 :host .details .content p {
+  overflow-y: auto;
   grid-area: description;
   font-weight: 200;
   font-size: 0.9em;
   padding: 3vh 2vw;
+  opacity: 0;
+  transform: translateY(5vh);
+  transition: .5s;
+  transition-delay: 1.5s;
 }
+
+:host.show .details .content p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
 
 :host .details .content .icons {
   grid-area: links;
@@ -76,6 +100,21 @@
 :host .details .content .icons fa-icon {
   font-size: 1.2em;
   cursor: pointer;
+  transition: .2s;
+  transform: scale(0);
+}
+
+:host.show .details .content .icons fa-icon {
+  animation: showLinks .5s 4s 1 linear forwards;
+}
+
+@keyframes showLinks {
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 
 :host .details .content .icons fa-icon.disable {
@@ -92,16 +131,29 @@
   gap: 0.8vw;
 }
 
-:host .details .content ul li {
+:host ::ng-deep .details .content ul li {
   padding: 1vh 1vw;
   text-transform: uppercase;
   font-weight: 400;
   font-size: 0.7rem;
   background-color: rgba(255, 255, 255, 0.08);
   border-radius: 0.3rem;
+  opacity: 0;
+  transition-duration: .5s;
+  transform: translateY(5vh);
+  transition-delay: calc(var(--j)*5ms);
 }
 
-.projects {
+:host.show .details .content ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+:host .details .close{
+  display: none;
+}
+
+:host .projects {
   position: relative;
   width: 30vw;
   height: 100%;
@@ -114,7 +166,7 @@
   align-self: flex-start;
 }
 
-.projects h1 {
+:host .projects h1 {
   position: relative;
   font-size: 1.8em;
   font-weight: 200;
@@ -126,9 +178,17 @@
   flex-direction: column;
   gap: 2vh;
   width: 100%;
+  opacity: 0;
+  transform: translateX(-1vw);
+  transition: .5s;
 }
 
-.projects h1 .line {
+:host.show .projects h1 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+:host .projects h1 .line {
   position: absolute;
   bottom: 0;
   height: 0.1vh;
@@ -136,7 +196,7 @@
   background-color: var(--lightTextColor);
 }
 
-.projects ul {
+:host .projects ul {
   overflow-y: auto;
   margin-top: 5vh;
   position: relative;
@@ -151,7 +211,7 @@
   gap: 1vh;
 }
 
-.projects ul li {
+:host .projects ul li {
   position: relative;
   width: 90%;
   padding: 1vh 1vw;
@@ -161,12 +221,30 @@
   text-transform: capitalize;
   cursor: pointer;
   border-radius: 0.5vh;
+  opacity: 0;
+  transition: .2s;
 }
-.projects ul li img {
+
+:host.show .projects ul li {
+  animation: showWorks .5s calc(var(--i)*.3s) 1 linear forwards;
+}
+
+@keyframes showWorks {
+  0%{
+    opacity: 0;
+    transform: translateX(-1vw);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+:host .projects ul li img {
   display: none;
 }
 
-.projects ul li.active {
+:host .projects ul li.active {
   border-left: 2px solid var(--lightTextColor);
   color: var(--lightTextColor);
   font-weight: 600;
@@ -214,11 +292,13 @@
     width: fit-content;
     color: #333;
     background: transparent;
+    transition: 0s;
   }
 
   :host .details.pop .title img {
     position: relative;
     width: 100%;
+    transition: 0s;
   }
 
   :host .details.pop .content {
@@ -232,6 +312,13 @@
     flex-direction: row;
     gap: 5vw;
     width: 100%;
+    padding: 2vh;
+  }
+
+  :host .details.pop .content .icons fa-icon{
+    transition: 0s;
+    animation-delay: 0;
+    animation-duration: 0;
   }
 
   :host ::ng-deep .details.pop .content .icons svg path {
@@ -241,6 +328,8 @@
   :host .details.pop .content p {
     width: 100%;
     color: #333;
+    transition: 0s;
+
   }
 
   :host .details.pop .content ul {
@@ -253,6 +342,8 @@
   }
   :host .details.pop .content ul li {
     background-color: var(--bgColor);
+    transition-duration: 0s;
+    transition-delay: 0s;
   }
 
   :host .details.pop .close {
@@ -269,7 +360,7 @@
     fill: red;
   }
 
-  .projects {
+  :host .projects {
     width: 100%;
     height: 100%;
     display: flex;
@@ -278,7 +369,7 @@
     justify-content: center;
   }
 
-  .projects h1 {
+  :host .projects h1 {
     font-size: 1.5em;
     font-weight: 200;
     color: var(--lightTextColor);
@@ -290,7 +381,7 @@
     width: 100%;
   }
 
-  .projects ul {
+  :host .projects ul {
     position: relative;
     width: 100%;
     height: auto;
@@ -301,7 +392,7 @@
     gap: 2vh;
   }
 
-  .projects ul li {
+  :host .projects ul li {
     position: relative;
     overflow: hidden;
     height: 25vh;
@@ -311,7 +402,7 @@
     background-color: rgba(0, 0, 0, 0.3);
   }
 
-  .projects ul li img {
+  :host .projects ul li img {
     position: relative;
     display: block;
     width: 100%;
@@ -326,11 +417,36 @@
   :host .details{
     width: 90vw;
   }
-  .projects ul {
+  :host .projects ul {
     grid-template-columns: 1fr;
     width: 90vw;
   }
-  .projects ul li {
+  :host .projects ul li {
     width: 100%;
+  }
+}
+
+
+
+/* Global Bye animation */
+
+:host.bye{
+  animation: bye 1.5s 1 linear forwards;
+}
+
+@keyframes bye {
+  0%{
+    transform: scale(1);
+  }
+  20%{
+    transform: scale(.5);
+  }
+  60%{
+    transform: rotateZ(-90deg) translateY(0) scale(.5);
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(100vh) rotateZ(-90deg) scale(.5);
+    opacity: 0;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import { faC, faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
@@ -8,7 +8,7 @@ import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
   templateUrl: './portfolio.component.html',
   styleUrls: ['./portfolio.component.css'],
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   showWork(i: number, e: any) {
     this.host.nativeElement
       .querySelector('.projects li.active')
@@ -64,6 +64,13 @@ export class PortfolioComponent implements OnInit {
 
   selected = this.works[0];
   constructor(private host: ElementRef) {}
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.host.nativeElement.classList.add('show');
+    }, 1000);
+  }
 
   ngOnInit(): void {}
+
+  
 }
