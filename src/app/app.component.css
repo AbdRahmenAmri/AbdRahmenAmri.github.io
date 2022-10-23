@@ -67,6 +67,9 @@
     width: 100vw;
     height: 100vh;
   }
+:host .container {
+  width: 90vw;
+}
   :host h1 {
     font-size: 1.2em;
   }
