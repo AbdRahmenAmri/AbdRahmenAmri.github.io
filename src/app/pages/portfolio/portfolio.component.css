@@ -1,0 +1,336 @@
+:host {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  height: 100%;
+  gap: 10vw;
+}
+
+:host .details {
+  position: relative;
+  width: 50vw;
+  height: auto;
+  border-radius: 10px;
+}
+
+:host .details .title {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+}
+
+:host .details .title h1 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: linear-gradient(to right, rgb(48, 2, 232), transparent);
+  bottom: 0;
+  z-index: 12;
+  padding: 5px 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+:host .details .title img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  border-radius: 10px;
+  border: 3px solid #fff;
+  border-bottom: none;
+}
+:host .details .content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 13;
+  overflow: hidden;
+  display: grid;
+  grid-template-areas: "links description" "tags tags";
+  grid-template-rows: auto 10vh;
+  grid-template-columns: 1vw auto;
+}
+
+:host .details .content p {
+  grid-area: description;
+  font-weight: 200;
+  font-size: 0.9em;
+  padding: 3vh 2vw;
+}
+
+:host .details .content .icons {
+  grid-area: links;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 3vh;
+}
+:host .details .content .icons fa-icon {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+:host .details .content .icons fa-icon.disable {
+  opacity: 0.2;
+  cursor: auto;
+}
+:host .details .content ul {
+  grid-area: tags;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 0.8vw;
+}
+
+:host .details .content ul li {
+  padding: 1vh 1vw;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.7rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 0.3rem;
+}
+
+.projects {
+  position: relative;
+  width: 30vw;
+  height: 100%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  grid-template-rows: 5vh auto;
+  align-self: flex-start;
+}
+
+.projects h1 {
+  position: relative;
+  font-size: 1.8em;
+  font-weight: 200;
+  color: var(--lightTextColor);
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2vh;
+  width: 100%;
+}
+
+.projects h1 .line {
+  position: absolute;
+  bottom: 0;
+  height: 0.1vh;
+  width: 100%;
+  background-color: var(--lightTextColor);
+}
+
+.projects ul {
+  overflow-y: auto;
+  margin-top: 5vh;
+  position: relative;
+  padding-top: 5vh;
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  gap: 1vh;
+}
+
+.projects ul li {
+  position: relative;
+  width: 90%;
+  padding: 1vh 1vw;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  font-size: 0.9em;
+  text-transform: capitalize;
+  cursor: pointer;
+  border-radius: 0.5vh;
+}
+.projects ul li img {
+  display: none;
+}
+
+.projects ul li.active {
+  border-left: 2px solid var(--lightTextColor);
+  color: var(--lightTextColor);
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Tablet Styles */
+@media only screen and (max-width: 1100px) {
+  :host {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: 90%;
+  }
+  :host .details,
+  :host .details.hide {
+    position: absolute;
+    transform: translateY(40vh) scale(0) ;
+    transition: .8s;
+    z-index: 110;
+    width: 100%;
+  }
+  :host .details.pop {
+    transition: .8s;
+    position: absolute;
+    height: 100%;
+    background-color: var(--lightTextColor);
+    z-index: 110;
+    display: flex;
+    justify-content: first baseline;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(0) scale(1) ;
+  }
+  :host .details.pop .title {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  :host .details.pop .title h1 {
+    position: relative;
+    font-size: 1em;
+    height: fit-content;
+    width: fit-content;
+    color: #333;
+    background: transparent;
+  }
+
+  :host .details.pop .title img {
+    position: relative;
+    width: 100%;
+  }
+
+  :host .details.pop .content {
+    overflow-y: auto;
+    grid-template-areas: "description" "links" "tags";
+    grid-template-columns: 1fr;
+  }
+
+  :host .details.pop .content .icons {
+    position: relative;
+    flex-direction: row;
+    gap: 5vw;
+    width: 100%;
+  }
+
+  :host ::ng-deep .details.pop .content .icons svg path {
+    fill: #333;
+  }
+
+  :host .details.pop .content p {
+    width: 100%;
+    color: #333;
+  }
+
+  :host .details.pop .content ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 4vh;
+    flex-wrap: wrap;
+  }
+  :host .details.pop .content ul li {
+    background-color: var(--bgColor);
+  }
+
+  :host .details.pop .close {
+    position: absolute;
+    width: 5vh;
+    height: 5vh;
+    bottom: -7vh;
+    z-index: 112;
+    display: grid;
+    place-content: center;
+    font-size: 2.5em;
+  }
+  :host ::ng-deep .details.pop .close svg path {
+    fill: red;
+  }
+
+  .projects {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .projects h1 {
+    font-size: 1.5em;
+    font-weight: 200;
+    color: var(--lightTextColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .projects ul {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    padding-top: 2vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2vh;
+  }
+
+  .projects ul li {
+    position: relative;
+    overflow: hidden;
+    height: 25vh;
+    padding: 1vh 1vw;
+    font-size: 0.7em;
+    border-radius: 0.5vh;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .projects ul li img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  :host .details{
+    width: 90vw;
+  }
+  .projects ul {
+    grid-template-columns: 1fr;
+    width: 90vw;
+  }
+  .projects ul li {
+    width: 100%;
+  }
+}

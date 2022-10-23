@@ -1,1 +1,32 @@
-<p>portfolio works!</p>
+<div class="details hide">
+  <div class="title">
+    <h1>{{this.selected.name}}</h1>
+    <img [src]="this.selected.src ? this.selected.src :'../../../assets/no-image.png'" alt="" />
+  </div>
+  <div class="content">
+    <div class="icons">
+      <fa-icon [ngClass]="{'disable':!this.selected.url}" [icon]="icons.openLink" (click)="this.selected.url && openUrl(this.selected.url)"></fa-icon>
+      <fa-icon [ngClass]="{'disable':!this.selected.github}" [icon]="icons.github" (click)="this.selected.github && openUrl(this.selected.url)"></fa-icon>
+    </div>
+    <p>
+       {{this.selected.description}}
+      </p>
+      <ul class="tags">
+        <li *ngFor="let el of this.selected.tags">{{el}}</li>
+      </ul>
+    </div>
+    <span class="close" (click)="hideWork()">
+      <fa-icon [icon]="icons.circleClose"></fa-icon>
+    </span>
+  </div>
+<div class="projects">
+  <h1>Some of my work
+    <span class="line"></span>
+  </h1>
+  <ul>
+    <li *ngFor="let el of works;let i = index;" [ngClass]="{ 'active' : i == 0 }" (click)="showWork(i,$event)">
+    <img [src]="el.src ? el.src :'../../../assets/no-image.png'" alt="" />
+      {{el.name}}
+    </li>
+  </ul>
+</div>
