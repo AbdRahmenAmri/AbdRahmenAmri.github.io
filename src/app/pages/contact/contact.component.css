@@ -127,3 +127,51 @@
         transform: translateY(100px);
     }
 }
+
+/* Tablet Styles */
+@media only screen and (max-width: 1100px) {
+    :host header h1 {
+      font-size: 1.5rem;
+    }
+    :host main{
+        padding: 10vh 0;
+    }
+    :host main .box{
+        width: 80px;
+        height: 80px;
+    }
+    :host main .box fa-icon{
+        font-size: 2rem;
+    }
+    :host main .box span{
+        font-size: .7rem;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media only screen and (max-width: 600px) {
+    :host{
+        width: 90vw;
+        justify-self: center;
+    }
+    :host header h1 {
+        font-size: 1.2rem;
+        justify-content: center;
+        text-align: center;
+      }
+      :host main{
+        padding: -1vh 0;
+        gap: 5vw;
+    }
+      :host main .box{
+          width: fit-content;
+          height: fit-content;
+      }
+      :host main .box fa-icon{
+          font-size: 2rem;
+      }
+      :host main .box span{
+          font-size: .7rem;
+      }
+    }
+    
