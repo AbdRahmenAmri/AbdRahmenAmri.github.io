@@ -6,6 +6,10 @@ import { Component, OnInit, AfterViewInit, ElementRef } from '@angular/core';
   styleUrls: ['./download-btn.component.css']
 })
 export class DownloadBtnComponent implements OnInit {
+  cvLink:URL = new URL('https://drive.google.com/file/d/1jeBkABtPIS2eTAPyJGCBGf-W_hJ1u4um/view?usp=sharing');
+downloadCV() {
+  window.open(this.cvLink,'_blank')
+}
 
   constructor(private host:ElementRef) {
    }
