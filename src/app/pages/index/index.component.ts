@@ -10,7 +10,6 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class IndexComponent implements OnInit {
   @ViewChild('welcome') welcome!: ElementRef;
   greeting: any = 'Welcome.';
-  gif:string = '<img src="../../../assets/smoke.gif">';
 
   greetingToSpan(str: String): string {
     let i: number = 0;
@@ -25,7 +24,7 @@ export class IndexComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer,private host:ElementRef) {}
 
   ngOnInit(): void {    
-    this.greeting = this.sanitizer.bypassSecurityTrustHtml(this.greetingToSpan(this.greeting)+this.gif);
+    this.greeting = this.sanitizer.bypassSecurityTrustHtml(this.greetingToSpan(this.greeting));
   }
   ngAfterViewInit(): void {
     setTimeout(() => {
