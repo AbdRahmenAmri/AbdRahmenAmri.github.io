@@ -6,7 +6,7 @@
   <div class="content">
     <div class="icons">
       <fa-icon [ngClass]="!this.selected.url ? 'disable' :''" [icon]="icons.openLink" (click)="this.selected.url && openUrl(this.selected.url)"></fa-icon>
-      <fa-icon [ngClass]="!this.selected.github ? 'disable' :''" [icon]="icons.github" (click)="this.selected.github && openUrl(this.selected.url)"></fa-icon>
+      <fa-icon [ngClass]="!this.selected.github ? 'disable' :''" [icon]="icons.github" (click)="this.selected.github && openUrl(this.selected.github)"></fa-icon>
     </div>
     <p>
        {{this.selected.description}}
