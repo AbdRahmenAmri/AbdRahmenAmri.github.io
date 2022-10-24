@@ -10,16 +10,19 @@
   font-weight: 200;
 }
 
-:host.bye h1 {
-  animation: bye 1s 1s linear forwards;
+:host.show.bye h1 {
+  opacity: 1;
+  animation: bye .8s linear forwards;
 }
 
 @keyframes bye {
   0% {
+    opacity: 1;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(150vw);
+    opacity: 0;
+    transform: translateX(10vw);
   }
 }
 
@@ -47,46 +50,6 @@
   }
 }
 
-:host.bye ::ng-deep h1 span:nth-last-child(3) {
-  animation: spanRotate 1.5s 1 linear forwards;
-}
-
-@keyframes spanRotate {
-  0% {
-    rotate: Z 0turn;
-  }
-  15% {
-    rotate: Z 2turn;
-  }
-  30% {
-    rotate: Z 3turn;
-  }
-  100% {
-    rotate: Z 10turn;
-  }
-}
-
-:host ::ng-deep img {
-  position: absolute;
-  rotate: Z 180deg;
-  width: 10vw;
-  height: 7vh;
-  bottom: 0;
-  transform: translateX(13vw);
-  opacity: 0;
-}
-:host.bye ::ng-deep img {
-  animation: pop 0.5s 0.2s forwards;
-}
-@keyframes pop {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
 :host p {
   font-weight: 200;
   padding: 5vh 200px;
@@ -103,7 +66,7 @@
 }
 
 :host.show.bye p {
-  animation: byeP 0.5s 1.5s linear forwards;
+  animation: byeP 0.5s .5s linear forwards;
 }
 
 @keyframes showP {
