@@ -26,7 +26,7 @@ export class AppComponent {
             .classList.add('bye');
           setTimeout(() => {
             resolve(true);
-          }, 2500);
+          }, 1500);
           break;
         case '/' + this.navs[2].toLocaleLowerCase():
           this.host.nativeElement
