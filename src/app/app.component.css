@@ -19,12 +19,35 @@
 }
 
 :host h1 {
+  position: relative;
   grid-area: logo;
   font-size: 1em;
   letter-spacing: 2px;
   padding: 25px 40px;
   text-transform: capitalize;
-  border-left: 2px solid var(--orangePink);
+  animation: slideToRight .5s 1 linear forwards;
+}
+
+@keyframes slideToRight {
+  0%{
+  opacity: 0;
+
+  transform: translateX(-5vw);
+  }
+  100%{
+  opacity: 1;
+  transform: translateX(0);
+    
+  }
+}
+
+:host h1 span{
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--orangePink);
 }
 
 :host .container {
@@ -56,7 +79,24 @@
   background-color: var(--lightTextColor);
   border-radius: 4px;
   color: var(--bgColor);
+  opacity: 0;
+  animation: slideToTop .5s calc(var(--i)*.5s) 1 linear forwards;
 }
+
+@keyframes slideToTop {
+  0%{
+  opacity: 0;
+
+  transform: translateY(5vh);
+  }
+  100%{
+  opacity: 1;
+  transform: translateY(0);
+    
+  }
+}
+
+
 /* Tablet Styles */
 @media only screen and (max-width: 1100px) {
 }

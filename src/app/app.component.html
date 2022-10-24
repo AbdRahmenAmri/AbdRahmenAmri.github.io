@@ -1,10 +1,10 @@
-<h1>AbdRahmen Amri</h1>
+<h1>
+  <span></span>
+  {{title}}
+</h1>
 <div class="container">
 <router-outlet></router-outlet>
-
 </div>
 <div class="arrows">
-  <span (click)="navClick(link3)">{{ link3 }} </span>
-  <span (click)="navClick(link1)">{{ link1 }} </span>
-  <span (click)="navClick(link2)">{{ link2 }} </span>
+  <span *ngFor="let el of navs; let i = index;" style=--i:{{1+i}} (click)="navClick(el)">{{ el }} </span>
 </div>
