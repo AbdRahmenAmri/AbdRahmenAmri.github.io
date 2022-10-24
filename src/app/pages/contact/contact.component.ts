@@ -10,7 +10,7 @@ export class ContactComponent implements OnInit {
   icons:Array<any> = [
     {icon:faEnvelope,text:'Email',link:'mailto:abdrahmen.3amri@gmail.com'},
     {icon:faFacebook,text:'Facebook',link:'https://www.facebook.com/abd.rahmen.5811877/'},
-    {icon:faTelegram,text:'Telegram',link:'tel:+21651543503'},
+    {icon:faTelegram,text:'Telegram',link:'https://t.me/siabdou'},
     {icon:faWhatsapp,text:'Whatsapp',link:'tel:+21651543503'},
     {icon:faGithub,text:'Github',link:'https://github.com/AbdRahmenAmri'},
   ] 
