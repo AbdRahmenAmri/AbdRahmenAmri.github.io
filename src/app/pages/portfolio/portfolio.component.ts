@@ -20,7 +20,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
     this.host.nativeElement.querySelector('.details').classList.toggle('hide');
     this.host.nativeElement.querySelector('.details').classList.toggle('pop');
   }
-  hideWork(){
+  hideWork() {
     this.host.nativeElement.querySelector('.details').classList.toggle('pop');
     this.host.nativeElement.querySelector('.details').classList.toggle('hide');
   }
@@ -34,31 +34,100 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   };
   works = [
     {
-      name: 'exemple of projects name 1',
+      name: 'Phishing Attacks',
       description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus rem,porro libero odio magni et magnam aut ipsum velit iusto saepe labore nostrumcommodi earum quam voluptate debitis qui eveniet. Pariatur nam dolorumfacere. Rem commodi deserunt quidem consectetur, excepturi laborum velmagnam ut perferendis non voluptatibus perspiciatis laboriosam porro.',
-      url: 'https://google.tn',
-      github: undefined,
-      src: 'https://assets.designhill.com/resize_img.php?atyp=page_file&pth=ad_ca_nh_bn_org||1754||banner_image_for_desktop_img&flp=1615975496-16316663006051d448ca7e87-29896522.jpg',
-      tags: ['reactjs', 'python', 'javascript', 'springboot'],
-    },
-    {
-      name: 'exemple of projects name 2',
-      description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus rem,porro libero odio magni et magnam aut ipsum velit iusto saepe labore nostrumcommodi earum quam voluptate debitis qui eveniet. Pariatur nam dolorumfacere. Rem commodi deserunt quidem consectetur, excepturi laborum velmagnam ut perferendis non voluptatibus perspiciatis laboriosam porro.',
+        'The phishing attack was the first project I was so enthusiastic about hacking staff so I cloned a website then plugged a form inside to stole user informations',
       url: undefined,
       github: undefined,
-      src: 'https://www.designhill.com/design-blog/wp-content/uploads/2020/01/post1-1-min-768x439.jpg',
-      tags: ['reactjs', 'python', 'javascript', 'springboot'],
+      src: '/assets/phishing.jpg',
+      tags: ['PHP', 'MySQL', 'javascript'],
     },
     {
-      name: 'exemple of projects name 3',
+      name: 'URL Shortener',
       description:
-        'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus rem,porro libero odio magni et magnam aut ipsum velit iusto saepe labore nostrumcommodi earum quam voluptate debitis qui eveniet. Pariatur nam dolorumfacere. Rem commodi deserunt quidem consectetur, excepturi laborum velmagnam ut perferendis non voluptatibus perspiciatis laboriosam porro.',
+        "This is not a simple URL shortener like bitly and the others the difference is the ability to share banned links on social media, For exemple if facebook banned your blog portfolio url you just need to short it in then i can share the short link it's simple.",
       url: undefined,
-      github: 'https://github.com',
-      src: undefined,
-      tags: ['reactjs', 'python', 'javascript', 'springboot', 'laravel'],
+      github: undefined,
+      src: '/assets/banned.jpeg',
+      tags: ['ajax', 'PHP', 'Google captcha', 'mysql'],
+    },
+    {
+      name: 'HangMan Game',
+      description:
+        'Hangman is a guessing game for two or more players. One player thinks of a word, phrase or sentence and the other(s) tries to guess it by suggesting letters within a certain number of guesses.',
+      url: undefined,
+      github: 'https://github.com/RmX404/Hangman_Game',
+      src: '/assets/hangman.png',
+      tags: ['Python', 'Tkinter'],
+    },
+
+    {
+      name: 'Flappy bird Game',
+      description:
+        'The game is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.',
+      url: undefined,
+      github: undefined,
+      src: '/assets/flappybird.jpg',
+      tags: ['Python', 'pygame'],
+    },
+    {
+      name: 'Scrum backlog tracker',
+      description: "Scrum backlog tracker this project allows the customer to track developing progress,\
+       what has been done what has not what is in progress and how long spring has been take who is working\
+        on it when did he start when did he finish.\
+        you can follow the app links and try it with those accounts:\n\
+        Developer email: testdev@test.com\n\
+        Customer email: test@test.com\n\
+        PASSWORD: 1234",
+      url: 'https://g4pfa.pythonanywhere.com/',
+      github: 'https://github.com/AbdRahmenAmri/pfahelper',
+      src: '/assets/scrum.png',
+      tags: ['Python', 'flask', 'sqlite3', 'angular CDN'],
+    },
+    {
+      name: 'Semi auto GPA Calculator',
+      description:
+        'Its a Grade Point Average (GPA) calculator the difference is you  don\'t need to write the whole program for each semester, you only have to write each module you had and its coefficient then the program will take the rest.',
+      url: 'http://fsb.rf.gd',
+      github: undefined,
+      src: '/assets/fsb.png',
+      tags: ['ajax', 'javascript', 'php'],
+    },
+    {
+      name: 'Random Quote Machine',
+      description:
+        'its part of Front End Development Libraries Projects by Free Code Camp.',
+      url: 'https://codepen.io/abdrahmenamri/pen/abYQRjM',
+      github: undefined,
+      src: 'https://shots.codepen.io/abdrahmenamri/pen/abYQRjM-800.jpg',
+      tags: ['reactjs'],
+    },
+    {
+      name: 'Drum machine',
+      description:
+      'its part of Front End Development Libraries Projects by Free Code Camp.',
+      url: 'https://codepen.io/abdrahmenamri/details/gOeZOWx',
+      github: undefined,
+      src: 'https://shots.codepen.io/abdrahmenamri/pen/gOeZOWx-800.jpg',
+      tags: ['reactjs'],
+    },
+    {
+      name: 'javascript calculator',
+      description:
+      'its part of Front End Development Libraries Projects by Free Code Camp.',
+      url: 'https://codepen.io/abdrahmenamri/pen/VwXVEVY',
+      github: undefined,
+      src: 'https://shots.codepen.io/abdrahmenamri/pen/VwXVEVY-800.jpg',
+      tags: ['reactjs'],
+    },
+    {
+      name: '25 + 5 clock',
+      description:
+      'its part of Front End Development Libraries Projects by Free Code Camp.',
+      url: 'https://codepen.io/abdrahmenamri/pen/JjLVoRo',
+      github: undefined,
+      src: 'https://shots.codepen.io/abdrahmenamri/pen/JjLVoRo-800.jpg',
+      tags: ['reactjs'],
     },
   ];
 
@@ -71,6 +140,4 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {}
-
-  
 }
