@@ -55,6 +55,7 @@
   padding: 5vh 200px;
   line-height: 4vh;
   opacity: 0;
+  white-space: pre-line;
 }
 
 :host.show p {
