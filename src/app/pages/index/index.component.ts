@@ -10,11 +10,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class IndexComponent implements OnInit {
   @ViewChild('welcome') welcome!: ElementRef;
   greeting: any = 'Welcome.';
+  about_description:string = 'It\'s me AbdRahmen Amri. A Computer Science Student and \
+    Full Stack Web Developer Having specialization in back end & front end development.\n\n\
+    + I have back end skills in PHP, Flask(Python), NodeJs, SpringBoot.\n\
+    + I have front end skills in ReactJs, Angular.'
 
   greetingToSpan(str: String): string {
     let i: number = 0;
     let spans: string = '';
-
     str.split('').forEach((val) => {
       i++;
       spans += '<span style="' + '--i:' + i + '">' + val + '</span>';
