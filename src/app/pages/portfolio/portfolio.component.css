@@ -210,6 +210,7 @@
   place-content: center;
   gap: 1vh;
   list-style: none;
+  align-content: first baseline;
 
 }
 
