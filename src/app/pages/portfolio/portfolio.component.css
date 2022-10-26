@@ -211,7 +211,6 @@
   gap: 1vh;
   list-style: none;
   align-content: first baseline;
-
 }
 
 :host .projects ul li {
@@ -396,6 +395,8 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2vh;
+  align-content: first baseline;
+
   }
 
   :host .projects ul li {
